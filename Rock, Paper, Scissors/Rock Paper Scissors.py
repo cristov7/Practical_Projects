@@ -1,9 +1,8 @@
 import random
 print("""
                WELCOME TO MY GAME:
-
             "Rock – Paper – Scissors"
-            
+
 """)
 rock = "Rock"
 paper = "Paper"
@@ -55,7 +54,7 @@ while True:
         continue
     elif command.lower() in no_list:
         print("""
-        
+
                 THANK YOU FOR PLAYING!
         """)
         break
