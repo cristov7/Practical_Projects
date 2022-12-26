@@ -1,9 +1,4 @@
 import re
-print("""
-                WELCOME TO MY
-             "ONLINE CALCULATOR"
-
-""")
 
 
 def valid_operator_function(current_operator: str):
@@ -97,6 +92,11 @@ def calculating_function(operation: str, number_1, number_2):
             raise SystemExit("Invalid operation. You can't divide by zero. Try again...")
 
 
+print("""
+                WELCOME TO MY
+             "ONLINE CALCULATOR"
+
+""")
 while True:
     operator = input("""Operators: 
     [+] add
