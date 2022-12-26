@@ -1,15 +1,15 @@
 import random
-print("""
-                       WELCOME TO MY:
-                "RANDOM SENTENCES GENERATOR"
-
-""")
 
 
 def get_random_word(words: list):
     return random.choice(words)
 
+  
+print("""
+                       WELCOME TO MY:
+                "RANDOM SENTENCES GENERATOR"
 
+""")
 names_list = ["Peter", "Michell", "Jane", "Steve"]
 places_list = ["Sofia", "Plovdiv", "Varna", "Burgas"]
 verbs_list = ["eats", "holds", "sees", "plays with", "brings"]
