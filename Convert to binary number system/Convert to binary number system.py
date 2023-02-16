@@ -1,3 +1,6 @@
+from collections import deque
+
+
 def return_result_from_decimal_number_system_function(current_number: str):
     calculation_list = []
     digit = int(current_number)
@@ -24,7 +27,15 @@ def return_result_from_hexadecimal_number_system_function(current_number: str):
     for digit in digits_list:
         value = convert_to_digits_dict[digit]
         calculation += value
-    return calculation
+    calculation_queue = deque(calculation)
+    while calculation_queue:
+        current_digit = calculation_queue.popleft()
+        if current_digit == "0":
+            continue
+        else:  # elif current_digit == "1":
+            calculation_queue.appendleft(current_digit)
+            break
+    return "".join(calculation_queue)
 
 
 print("""
