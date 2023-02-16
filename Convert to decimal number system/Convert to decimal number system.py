@@ -33,7 +33,7 @@ while True:
                    "\n- from the binary number system:        [2]"
                    "\n- from the hexadecimal number system:   [16]"
                    "\nChoose: ")
-    if choose == "2" and number.isalpha():
+    if choose == "2" and number.isdigit():
         result = return_result_from_binary_number_system_function(number)
         print(f"\n{number}(2) = {result}(10)")
     elif choose == "16":
