@@ -154,9 +154,10 @@ class DailyEnergyConsumptionTests(unittest.TestCase):
         assert isinstance(self.energy.__repr__(), str)
 
     def test___repr___while_energy_consumption_is_none_successfully(self):
-        self.energy.main_exchange = 1850
-        assert self.energy.main_exchange == 1850
-        assert isinstance(self.energy.main_exchange, int)
+        self.energy.calculate_main_exchange()
+
+        assert self.energy.main_exchange == 1830.725
+        assert isinstance(self.energy.main_exchange, float)
 
         assert self.energy.__repr__() == "First you have to calculate main exchange and daily energy consumption!"
         assert isinstance(self.energy.__repr__(), str)

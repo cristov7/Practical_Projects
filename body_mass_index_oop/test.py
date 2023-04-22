@@ -95,6 +95,8 @@ class BodyMassIndexTests(unittest.TestCase):
 
     def test___repr___already_set_body_mass_index_successfully(self):
         self.bmi.calculate_body_mass_index()
+        assert self.bmi.body_mass_index == 0
+        assert isinstance(self.bmi.body_mass_index, int)
 
         assert self.bmi.__repr__() == "0th degree of obesity."
         assert isinstance(self.bmi.__repr__(), str)
