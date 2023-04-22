@@ -12,9 +12,9 @@ class CalculateMacronutrients:
 
     def __init__(self, daily_target_kcal: float):
         self.daily_target_kcal = daily_target_kcal
-        self.protein_kcal: None or int = None
-        self.fat_kcal: None or int = None
-        self.carb_kcal: None or int = None
+        self.protein_kcal: None or float = None
+        self.fat_kcal: None or float = None
+        self.carb_kcal: None or float = None
 
     @property   # getter
     def daily_target_kcal(self) -> float:
