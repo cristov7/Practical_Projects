@@ -15,7 +15,9 @@ class CalculateMacronutrientsTests(unittest.TestCase):
         assert isinstance(self.calc_macros.daily_target_kcal, int)
 
         assert self.calc_macros.protein_kcal is None
+
         assert self.calc_macros.fat_kcal is None
+
         assert self.calc_macros.carb_kcal is None
 
     def test_set_daily_target_kcal_successfully(self):
@@ -38,31 +40,31 @@ class CalculateMacronutrientsTests(unittest.TestCase):
     def test___calculate_protein_kcal_successfully(self):
         self.calc_macros._CalculateMacronutrients__calculate_protein_kcal()   # private method
 
-        assert self.calc_macros.protein_kcal == 375
+        assert self.calc_macros.protein_kcal == 375.0
         assert isinstance(self.calc_macros.protein_kcal, float)
 
     def test___calculate_fat_kcal_successfully(self):
         self.calc_macros._CalculateMacronutrients__calculate_fat_kcal()   # private method
 
-        assert self.calc_macros.fat_kcal == 750
+        assert self.calc_macros.fat_kcal == 750.0
         assert isinstance(self.calc_macros.fat_kcal, float)
 
     def test___calculate_carb_kcal_successfully(self):
         self.calc_macros._CalculateMacronutrients__calculate_carb_kcal()   # private method
 
-        assert self.calc_macros.carb_kcal == 1375
+        assert self.calc_macros.carb_kcal == 1375.0
         assert isinstance(self.calc_macros.carb_kcal, float)
 
     def test_calculate_macronutrients_successfully(self):
         self.calc_macros.calculate_macronutrients()
 
-        assert self.calc_macros.protein_kcal == 375
+        assert self.calc_macros.protein_kcal == 375.0
         assert isinstance(self.calc_macros.protein_kcal, float)
 
-        assert self.calc_macros.fat_kcal == 750
+        assert self.calc_macros.fat_kcal == 750.0
         assert isinstance(self.calc_macros.fat_kcal, float)
 
-        assert self.calc_macros.carb_kcal == 1375
+        assert self.calc_macros.carb_kcal == 1375.0
         assert isinstance(self.calc_macros.carb_kcal, float)
 
     # def test___repr___successfully(self):

@@ -4,13 +4,13 @@ import unittest
 
 class BodyMassIndexTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.bmi = BodyMassIndex(78.500, 178.500)
+        self.bmi = BodyMassIndex(78.500, 178.50)
 
     def test___init___successfully(self):
         assert self.bmi.weight == 78.500
         assert isinstance(self.bmi.weight, float)
 
-        assert self.bmi.height == 178.500
+        assert self.bmi.height == 178.50
         assert isinstance(self.bmi.weight, float)
 
         assert self.bmi.body_mass_index is None
@@ -21,12 +21,16 @@ class BodyMassIndexTests(unittest.TestCase):
         assert isinstance(self.bmi.weight, int)
 
         self.bmi.weight = 99.500
-        assert self.bmi.weight == 99.5
+        assert self.bmi.weight == 99.500
         assert isinstance(self.bmi.weight, float)
 
     def test_set_weight_and_raise_value_error(self):
         with self.assertRaises(ValueError) as content:
             self.bmi.weight = 300.1
+        assert str(content.exception) == "Invalid weight. Try again in kg..."
+
+        with self.assertRaises(ValueError) as content:
+            self.bmi.weight = 0.00
         assert str(content.exception) == "Invalid weight. Try again in kg..."
 
         assert self.bmi.weight == 78.500
@@ -37,7 +41,7 @@ class BodyMassIndexTests(unittest.TestCase):
         assert self.bmi.height == 185
         assert isinstance(self.bmi.height, int)
 
-        self.bmi.height = 199.750
+        self.bmi.height = 199.75
         assert self.bmi.height == 199.75
         assert isinstance(self.bmi.height, float)
 
@@ -46,8 +50,12 @@ class BodyMassIndexTests(unittest.TestCase):
             self.bmi.height = 300.1
         assert str(content.exception) == "Invalid height. Try again in cm..."
 
-        assert self.bmi.height == 178.500
-        assert isinstance(self.bmi.weight, float)
+        with self.assertRaises(ValueError) as content:
+            self.bmi.height = 0.00
+        assert str(content.exception) == "Invalid height. Try again in cm..."
+
+        assert self.bmi.height == 178.50
+        assert isinstance(self.bmi.height, float)
 
     def test_calculate_body_mass_index_with_zero_degree_of_obesity_successfully(self):
         self.bmi.calculate_body_mass_index()
@@ -56,6 +64,8 @@ class BodyMassIndexTests(unittest.TestCase):
 
     def test_calculate_body_mass_index_with_first_degree_of_obesity_successfully(self):
         self.bmi.weight = 83.500
+        assert self.bmi.weight == 83.500
+        assert isinstance(self.bmi.weight, float)
 
         self.bmi.calculate_body_mass_index()
         assert self.bmi.body_mass_index == 1
@@ -63,6 +73,8 @@ class BodyMassIndexTests(unittest.TestCase):
 
     def test_calculate_body_mass_index_with_second_degree_of_obesity_successfully(self):
         self.bmi.weight = 99.500
+        assert self.bmi.weight == 99.500
+        assert isinstance(self.bmi.weight, float)
 
         self.bmi.calculate_body_mass_index()
         assert self.bmi.body_mass_index == 2
@@ -70,6 +82,8 @@ class BodyMassIndexTests(unittest.TestCase):
 
     def test_calculate_body_mass_index_with_third_degree_of_obesity_successfully(self):
         self.bmi.weight = 130.000
+        assert self.bmi.weight == 130.000
+        assert isinstance(self.bmi.weight, float)
 
         self.bmi.calculate_body_mass_index()
         assert self.bmi.body_mass_index == 3

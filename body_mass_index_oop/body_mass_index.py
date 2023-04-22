@@ -31,12 +31,16 @@ class BodyMassIndex:
 
     def calculate_body_mass_index(self) -> None:
         calculation = self.weight / (self.height / 100) ** 2
+
         if calculation <= 24.9:
             self.body_mass_index = 0
+
         elif calculation <= 29.9:
             self.body_mass_index = 1
+
         elif calculation <= 39.9:
             self.body_mass_index = 2
+
         else:
             self.body_mass_index = 3
 
