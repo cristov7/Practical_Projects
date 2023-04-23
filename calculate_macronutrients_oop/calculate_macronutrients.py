@@ -78,20 +78,20 @@ class CalculateMacronutrients:
 #
 #
 # def valid_daily_energy_consumption_function(value: str):
-#     regex_int = r"^(\d+)$"
-#     match = re.search(regex_int, value)
+#     regex_plus_int = r"^(\d+)$"
+#     match = re.search(regex_plus_int, value)
 #     if match:
 #         valid_value = float(match.group(1))
 #         return valid_value
 #
-#     regex_float_point = r"^(\d{1,}\.{1}\d{1,})$"
-#     match = re.search(regex_float_point, value)
+#     regex_plus_float_point = r"^(\d{1,}\.{1}\d{1,})$"
+#     match = re.search(regex_plus_float_point, value)
 #     if match:
 #         valid_value = float(match.group(1))
 #         return valid_value
 #
-#     regex_float_comma = r"^(\d{1,}\,{1}\d{1,})$"
-#     match = re.search(regex_float_comma, value)
+#     regex_plus_float_comma = r"^(\d{1,}\,{1}\d{1,})$"
+#     match = re.search(regex_plus_float_comma, value)
 #     if match:
 #         current_value = match.group(1)
 #         edit_current_value = current_value.replace(",", ".")
