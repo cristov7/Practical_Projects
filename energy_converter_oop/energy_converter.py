@@ -1,4 +1,4 @@
-import re
+# import re
 from typing import Dict
 
 
@@ -58,76 +58,76 @@ class EnergyConverter:
             return "First you have to calculate convert energy!"
 
 
-print("""
-              WELCOME TO MY
-            "ENERGY CONVERTER"
-
-""")
-
-
-def valid_option_function(value: str):
-    if value == "1" or value.lower() == "from kcal to kj":
-        return "from kcal to kJ"
-
-    elif value == "2" or value.lower() == "from kj to kcal":
-        return "from kJ to kcal"
-
-    else:
-        raise SystemExit("Invalid choice. Try again...")
-
-
-def valid_energy_function(value: str):
-    regex_plus_int = r"^(\d+)$"
-    match = re.search(regex_plus_int, value)
-    if match:
-        valid_value = float(match.group(1))
-        return valid_value
-
-    regex_plus_float_point = r"^(\d{1,}\.{1}\d{1,})$"
-    match = re.search(regex_plus_float_point, value)
-    if match:
-        valid_value = float(match.group(1))
-        return valid_value
-
-    regex_plus_float_comma = r"^(\d{1,}\,{1}\d{1,})$"
-    match = re.search(regex_plus_float_comma, value)
-    if match:
-        current_value = match.group(1)
-        edit_current_value = current_value.replace(",", ".")
-        valid_value = float(edit_current_value)
-        return valid_value
-
-    else:
-        raise SystemExit("Invalid value. Try again...")
-
-
-current_option = input("""Converter options:
-[1] - from kcal to kJ
-[2] - from kJ to kcal
-
-Choose converter: """)
-valid_option = valid_option_function(current_option)
-
-
-current_energy = ""
-
-if valid_option == "from kcal to kJ":
-    current_energy = input("Enter kcal: ")
-
-elif valid_option == "from kJ to kcal":
-    current_energy = input("Enter kJ: ")
-
-valid_energy = valid_energy_function(current_energy)
-print("\n")
-
-
-energy_convertor_object = EnergyConverter(valid_option, valid_energy)
-energy_convertor_object.calculate_convert_energy()
-print(energy_convertor_object.__repr__())
-
-
-print("""
-
-            THANK YOU FOR USING MY
-              !ENERGY CONVERTER!
-""")
+# print("""
+#               WELCOME TO MY
+#             "ENERGY CONVERTER"
+#
+# """)
+#
+#
+# def valid_option_function(value: str):
+#     if value == "1" or value.lower() == "from kcal to kj":
+#         return "from kcal to kJ"
+#
+#     elif value == "2" or value.lower() == "from kj to kcal":
+#         return "from kJ to kcal"
+#
+#     else:
+#         raise SystemExit("Invalid choice. Try again...")
+#
+#
+# def valid_energy_function(value: str):
+#     regex_plus_int = r"^(\d+)$"
+#     match = re.search(regex_plus_int, value)
+#     if match:
+#         valid_value = float(match.group(1))
+#         return valid_value
+#
+#     regex_plus_float_point = r"^(\d{1,}\.{1}\d{1,})$"
+#     match = re.search(regex_plus_float_point, value)
+#     if match:
+#         valid_value = float(match.group(1))
+#         return valid_value
+#
+#     regex_plus_float_comma = r"^(\d{1,}\,{1}\d{1,})$"
+#     match = re.search(regex_plus_float_comma, value)
+#     if match:
+#         current_value = match.group(1)
+#         edit_current_value = current_value.replace(",", ".")
+#         valid_value = float(edit_current_value)
+#         return valid_value
+#
+#     else:
+#         raise SystemExit("Invalid value. Try again...")
+#
+#
+# current_option = input("""Converter options:
+# [1] - from kcal to kJ
+# [2] - from kJ to kcal
+#
+# Choose converter: """)
+# valid_option = valid_option_function(current_option)
+#
+#
+# current_energy = ""
+#
+# if valid_option == "from kcal to kJ":
+#     current_energy = input("Enter kcal: ")
+#
+# elif valid_option == "from kJ to kcal":
+#     current_energy = input("Enter kJ: ")
+#
+# valid_energy = valid_energy_function(current_energy)
+# print("\n")
+#
+#
+# energy_convertor_object = EnergyConverter(valid_option, valid_energy)
+# energy_convertor_object.calculate_convert_energy()
+# print(energy_convertor_object.__repr__())
+#
+#
+# print("""
+#
+#             THANK YOU FOR USING MY
+#               !ENERGY CONVERTER!
+# """)
