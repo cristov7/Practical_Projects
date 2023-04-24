@@ -76,6 +76,7 @@ class NumeralsSystems:
 
     def __calculate_from_decimal_to_binary_numeral_system(self) -> None:
         calculation_list = []
+
         digit = self.number
 
         while digit != 0:
@@ -95,6 +96,7 @@ class NumeralsSystems:
             "4": "0100", "5": "0101", "6": "0110", "7": "0111",
             "8": "1000", "9": "1001", "A": "1010", "B": "1011",
             "C": "1100", "D": "1101", "E": "1110", "F": "1111"}
+
         digits_list = list(self.number)
 
         for digit in digits_list:
@@ -105,6 +107,7 @@ class NumeralsSystems:
 
     def __calculate_from_binary_to_decimal_numeral_system(self) -> None:
         calculation = 0
+
         digits_list = list(self.number)
         degree = len(digits_list) - 1
 
@@ -117,6 +120,7 @@ class NumeralsSystems:
     def __calculate_from_hexadecimal_to_decimal_numeral_system(self) -> None:
         calculation = 0
         convert_letters_to_digits_dict = {"A": 10, "B": 11, "C": 12, "D": 13, "E": 14, "F": 15}
+
         digits_list = list(self.number)
         degree = len(digits_list) - 1
 
@@ -174,6 +178,7 @@ class NumeralsSystems:
     def __calculate_from_decimal_to_hexadecimal_numeral_system(self) -> None:
         calculation_list = []
         convert_to_digits_dict = {10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F"}
+
         digit = self.number
 
         while digit != 0:
