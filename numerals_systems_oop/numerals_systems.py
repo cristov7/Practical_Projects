@@ -140,16 +140,18 @@ class NumeralsSystems:
             "1000": "8", "1001": "9", "1010": "A", "1011": "B",
             "1100": "C", "1101": "D", "1110": "E", "1111": "F"}
 
-        if len(self.number) % 4 == 1:
-            self.number = "000" + self.number
+        number = self.number
 
-        elif len(self.number) % 4 == 2:
-            self.number = "00" + self.number
+        if len(number) % 4 == 1:
+            number = "000" + number
 
-        elif len(self.number) % 4 == 3:
-            self.number = "0" + self.number
+        elif len(number) % 4 == 2:
+            number = "00" + number
 
-        numbers_queue = deque(self.number)
+        elif len(number) % 4 == 3:
+            number = "0" + number
+
+        numbers_queue = deque(number)
         while numbers_queue:
 
             first_digit = numbers_queue.popleft()
@@ -162,7 +164,12 @@ class NumeralsSystems:
             value = convert_to_digits_dict[digit]
             calculation += value
 
-        self.convert_number = calculation
+        calculation = calculation.lstrip("0")
+
+        if calculation:
+            self.convert_number = calculation
+        else:
+            self.convert_number = "0"
 
     def __calculate_from_decimal_to_hexadecimal_numeral_system(self) -> None:
         calculation_list = []
