@@ -33,11 +33,30 @@ class FactorialCalculatorTests(unittest.TestCase):
         assert isinstance(self.factorial_calculator.factorial_of_number, int)
 
     def test___repr___with_set_factorial_of_number_successfully(self):
+        self.factorial_calculator.number = 0
+        assert self.factorial_calculator.number == 0
+        assert isinstance(self.factorial_calculator.number, int)
         self.factorial_calculator.calculate_factorial_of_number()
 
         assert self.factorial_calculator.__repr__() == "Factorial function:" \
-                                                       "\n1 x 2 x 3 x 4 x 5 = 120" \
-                                                       "\nResult: 120"
+                                                       "\n0! = 1" \
+                                                       "\nResult: 1"
+        assert isinstance(self.factorial_calculator.__repr__(), str)
+
+        self.factorial_calculator.number = 1
+        self.factorial_calculator.calculate_factorial_of_number()
+
+        assert self.factorial_calculator.__repr__() == "Factorial function:" \
+                                                       "\n1! = 1" \
+                                                       "\nResult: 1"
+        assert isinstance(self.factorial_calculator.__repr__(), str)
+
+        self.factorial_calculator.number = 10
+        self.factorial_calculator.calculate_factorial_of_number()
+
+        assert self.factorial_calculator.__repr__() == "Factorial function:" \
+                                                       "\n10! = 10 x 9 x 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1 = 3628800" \
+                                                       "\nResult: 3628800"
         assert isinstance(self.factorial_calculator.__repr__(), str)
 
     def test___repr___without_set_factorial_of_number_successfully(self):

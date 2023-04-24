@@ -22,13 +22,21 @@ class FactorialCalculator:
 
     def __repr__(self) -> str:
         if self.factorial_of_number is not None:
-            calculation_info = ""
+            calculation_info = f"{self.number}! = "
 
-            for number in range(1, self.number + 1):
-                if number < self.number:
-                    calculation_info += f"{number} x "
-                else:
-                    calculation_info += f"{number} = {self.factorial_of_number}"
+            if self.number == 0:
+                calculation_info += "1"
+
+            elif self.number == 1:
+                calculation_info += "1"
+
+            else:
+                for number in range(self.number, 0, - 1):
+                    if number > 1:
+                        calculation_info += f"{number} x "
+
+                    else:
+                        calculation_info += f"{number} = {self.factorial_of_number}"
 
             output = f"Factorial function:" \
                      f"\n{calculation_info}" \
