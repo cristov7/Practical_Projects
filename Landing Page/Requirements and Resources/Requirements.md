@@ -1,7 +1,5 @@
 # 01 - KidsCorner
 ------
-Problems for homework for the [“HTML and CSS Basics”](#) course @ **SoftUni**.
-
 ## Constraints
 * Change the document **title** to *"KidsCornes"*
 * Use **"PT Sans", sans-serif** font family for the document
