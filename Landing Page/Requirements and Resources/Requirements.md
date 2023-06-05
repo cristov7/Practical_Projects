@@ -1,6 +1,5 @@
 # 01 - KidsCorner
 ------
-Problems for homework for the [“HTML and CSS Basics”](#) course @ **SoftUni**.
 
 ## Constraints
 * Change the document **title** to *"KidsCornes"*
