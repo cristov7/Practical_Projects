@@ -1,6 +1,5 @@
 # 01 - KidsCorner
 ------
-
 ## Constraints
 * Change the document **title** to *"KidsCornes"*
 * Use **"PT Sans", sans-serif** font family for the document
