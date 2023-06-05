@@ -1,9 +1,5 @@
 ﻿# 02 - Portfolio
 ------
-Problems for homework for the [“HTML and CSS Basics”](#) course @ **SoftUni**.
-
-Submit your solutions in the [SoftUni Judge System](https://judge.softuni.bg/Contests/#!/List/ByCategory/165/HTML-and-CSS)
-
 ## Constraints
 * Change the document **title** to *"Portfolio"*
 * Divide your page content into **header** and **main** tags
