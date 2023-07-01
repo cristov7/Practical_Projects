@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <!-- Display paragraph: If there are no plants yet-->
+    {% if not all_plant_objects %}
+        <p class="no-articles">No plants yet</p>
+    <!-- Display div "plant" with information about every plant (if any)-->
+    {% else %}
+    <section id="catalogue">
+        {% for plant_object in all_plant_objects %}
+            <!-- plant-->
+            <div class="plant-card">
+                <div class="image-wrap">
+                    <!-- plant image -->
+                    <img src="{{ plant_object.image_url }}" alt="Indoor Plants">
+                </div>
+                <!-- plant name -->
+                <h3>{{ plant_object.name }}</h3>
+                <!-- plant description -->
+                <h1>{{ plant_object.description|truncatechars:20 }}</h1>
+                <div class="details-buttons">
+                    <!-- plant details button -->
+                    <a href="{% url 'plant details page' plant_id=plant_object.pk %}" class="details-btn">Details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <!-- details section -->
+    <section id="plant-details">
+        <h1>Plant Details</h1>
+        <div class="info-section">
+            <div class="plant-header">
+                <!-- plant image -->
+                <img class="plant-img"
+                     src="{{ plant_object.image_url }}" alt='plant image'/>
+                <!-- plant type -->
+                <h1>{{ plant_object.plant_type }}</h1>
+                <!-- plant name -->
+                <p><span class="description-plant">Name: {{ plant_object.name }}</span></p>
+                <!-- plant price -->
+                <p><span class="description-plant">Price: {{ plant_object.price|floatformat:2 }}</span></p>
+                <!-- plant description -->
+                <p><span class="description-plant">Description: {{ plant_object.description }}</span></p>
+            </div>
+
+            <!-- Edit/Delete buttons -->
+            <div class="buttons">
+                <a href="{% url 'plant edit page' plant_id=plant_object.pk %}" class="edit-button">Edit</a>
+                <a href="{% url 'plant delete page' plant_id=plant_object.pk %}" class="delete-button">Delete</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
