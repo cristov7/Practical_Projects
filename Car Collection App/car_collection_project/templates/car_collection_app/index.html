@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<body>
+    <div id="box">
+        {% block main_content %}
+            <!-- headlines -->
+            <section id="index-headline">
+                <div class="index-message">
+                    <h2>Our <span>cars</span> collection is expecting you!</h2>
+                </div>
+                <img src="{% static 'images/car-index.png' %}" alt="car">
+            </section>
+        {% endblock %}
+    </div>
+</body>

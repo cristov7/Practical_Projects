@@ -1,0 +1,15 @@
+<header>
+    <!-- Navigation Bar -->
+    <h1><a class="index-navigation" href="{% url 'index page' %}"><span>C</span>ARS <span>C</span>OLLECTION</a></h1>
+    <nav>
+        <!-- if the user has not created a profile -->
+        {% if not profile_object %}
+            <a href="{% url 'profile create page' %}">Create Profile</a>
+            <!-- if the user has created a profile -->
+        {% else %}
+            <a href="{% url 'catalogue page' %}">Catalogue</a>
+            <a href="{% url 'car create page' %}">Create Car</a>
+            <a href="{% url 'profile details page' %}">Profile</a>
+        {% endif %}
+    </nav>
+</header>
