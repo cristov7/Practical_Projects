@@ -1,0 +1,17 @@
+<header id="site-header">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <section class="navbar-dashboard">
+            {% if not profile_object %}
+                <a href="{% url 'home page' %}">Dashboard</a>
+            {% else %}
+                <a href="{% url 'home page' %}">Dashboard</a>
+                <div id="user">
+                    <span>Welcome, {{ profile_object.first_name }}</span>
+                    <a class="button" href="{% url 'add book page' %}">Add Book</a>
+                    <a class="button" href="{% url 'profile page' %}">Profile</a>
+                </div>
+            {% endif %}
+        </section>
+    </nav>
+</header>

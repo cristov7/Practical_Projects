@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <!-- Profile Page -->
+    <section id="profile-page" class="details">
+        <div class="profile-information">
+            <h3>{{ profile_object.full_name }}</h3>
+            <p class="img"><img src="{{ profile_object.image_url }}" alt=""></p>
+            <div class="actions">
+                <a class="button" href="{% url 'edit profile page' %}">Edit</a>
+                <a class="button" href="{% url 'delete profile page' %}">Delete</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
