@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <div class="body">
+        <!--headings-->
+        <h1>Enter Your Data</h1>
+        <!--end headings-->
+        <!--profile data form-->
+        <div class="form">
+            <form method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="97MmAxmrs7yPXUamEdIgRY80OHEP383f6VukAC6agPNIW60LqTcnIQlM6YCYPjc0"/>
+                {% csrf_token %}
+                {{ model_form }}
+                <input type="submit" value="SUBMIT"/>
+            </form>
+        </div>
+        <!--end profile data form-->
+    </div>
+{% endblock %}

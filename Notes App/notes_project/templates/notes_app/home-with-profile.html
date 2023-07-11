@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <h1>My Notes</h1>
+    {% if not note_objects_all %}
+        <h2>There are no notes.</h2>
+    {% else %}
+        <!--notes container-->
+        <div class="note-container">
+            {% for note_object in note_objects_all %}
+                <h2>{{ note_object.title }} <img src="{{ note_object.image_url }}" alt=""/></h2>
+                <div class="right">
+                    <a class="button details" href="{% url 'note details page' pk=note_object.pk %}">Details</a>
+                    <a class="button edit" href="{% url 'edit note page' pk=note_object.pk %}">Edit</a>
+                    <a class="button delete" href="{% url 'delete note page' pk=note_object.pk %}">Delete</a>
+                </div>
+            {% endfor %}
+        </div>
+        <!--end notes container-->
+    {% endif %}
+{% endblock %}
