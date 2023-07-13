@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <div class="container">
+        <h1>Delete Recipe</h1>
+        <div class="items-container">
+            <div class="item">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ model_form }}
+                    <input type="submit" class="button delete" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <div class="container">
+        <h1>My Recipes</h1>
+        {% if not all_recipe_objects %}
+            <h2>There are no recipes.</h2>
+        {% else %}
+            <div class="items-container">
+                {% for recipe_object in all_recipe_objects %}
+                    <div class="item">
+                        <h2>{{ recipe_object.title }}</h2>
+                        <img class="detail-img" src="{{ recipe_object.image_url }}" alt="recipe-image">
+                        <div class="recipe-info">
+                            {{ recipe_object.description }}
+                        </div>
+                        <div class="buttons-container">
+                            <a class="button detail" href="{% url 'recipe details page' pk=recipe_object.pk %}">Details</a>
+                            <a class="button edit" href="{% url 'edit recipe page' pk=recipe_object.pk %}">Edit</a>
+                            <a class="button delete" href="{% url 'delete recipe page' pk=recipe_object.pk %}">Delete</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
