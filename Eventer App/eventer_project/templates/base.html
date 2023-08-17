@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Load Static -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+
+    <title>Eventer App</title>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- Start Header section -->
+        {% include 'partials/header.html' %}
+        <!-- End Header section -->
+
+        <!-- Start Main Content block -->
+        {% block main_content %}
+        {% endblock %}
+        <!-- End Main Content block -->
+
+        <!-- Start Footer section -->
+        {% include 'partials/footer.html' %}
+        <!-- End Footer section -->
+    </div>
+</body>
+
+</html>
